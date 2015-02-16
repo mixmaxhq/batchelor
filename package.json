@@ -2,7 +2,7 @@
   "name": "Batchelor.js",
   "version": "0.0.1",
   "description": "A lovely little Node.js module to perform batch requests with the Google REST API",
-  "main": "index.js",
+  "main": "./lib/batchelor",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
