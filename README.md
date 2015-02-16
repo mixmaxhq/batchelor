@@ -114,7 +114,7 @@ Batchelor.init({
 	...
 });
 ```
-## TODOs
+## To Do List-ish
 * Limit requests per batch request
 * Handle Media in API calls (no need for it here, feel free)
 
