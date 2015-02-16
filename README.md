@@ -1,6 +1,8 @@
 # Batchelor
 A lovely little Node.js module to perform batch requests with the Google REST API. Simply does it.
 
+![Batchelor](http://wapi.staging.wapisasa.org/wp-content/uploads/2015/02/Batchelor-small.png)
+
 ## Google API Batch Requests
 This is a project to solve a need for a missing feature in the wonderfully epic and useful [google/google-api-nodejs-client](https://github.com/google/google-api-nodejs-client). Currently, this cannot be used to post media and has not been tested with posting anything but JSON.
 
