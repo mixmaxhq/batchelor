@@ -114,6 +114,9 @@ Batchelor.init({
 	...
 });
 ```
+## TODOs
+* Limit requests per batch request
+* Handle Media in API calls (no need for it here, feel free)
 
 ## Release History
 
