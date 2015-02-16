@@ -1,0 +1,9 @@
+HTTP/1.1 201 Created
+Content-Type: application/json
+Date: Sun, 21 Jul 2013 14:51:09 GMT
+X-Apiary-Ratelimit-Limit: 120
+X-Apiary-Ratelimit-Remaining: 119
+Content-Length: 50
+Connection: keep-alive
+
+{ "status": "created", "url": "/shopping-cart/2" }

@@ -1,0 +1,39 @@
+{
+  "name": "Batchelor.js",
+  "version": "0.0.1",
+  "description": "A lovely little Node.js module to perform batch requests with the Google REST API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wapisasa/Batchelor.git"
+  },
+  "keywords": [
+    "batchelor",
+    "batchelor.js",
+    "google",
+    "apis",
+    "batch",
+    "gapi",
+    "googleapi",
+    "rest",
+    "api"
+  ],
+  "author": {
+    "name": "James Haley",
+    "email": "npmjs@jameshaley.co.uk"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/wapisasa/Batchelor/issues"
+  },
+  "homepage": "https://github.com/wapisasa/Batchelor",
+  "dependencies": {
+    "dicer": "^0.2.3",
+    "hat": "0.0.3",
+    "http-string-parser": "0.0.4",
+    "request": "^2.53.0"
+  }
+}
