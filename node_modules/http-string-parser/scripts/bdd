@@ -1,2 +1,0 @@
-#!/bin/sh
-./node_modules/mocha/bin/mocha -w --reporter spec --compilers 'coffee:coffee-script' ./test/**/*-test.coffee
