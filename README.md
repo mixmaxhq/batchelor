@@ -118,3 +118,6 @@ Batchelor.init({
 ## Release History
 
 * 0.0.1 Initial release
+
+## Acknowledgement
+Built on the clock by [@sparkyfied](https://github.com/sparkyfied) as an internal project of [wapisasa C.I.C.](http://www.wapisasa.com)
