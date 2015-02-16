@@ -102,7 +102,7 @@ Batchelor.add({
 	'requestId':'Batch_UniqueID_1'
 })
 ```
-#### A Little Gift:
+#### A Little Gift
 All methods return the `Batchelor` object. So you can chain calls together.
 
 ``` node
@@ -115,6 +115,7 @@ Batchelor.init({
 });
 ```
 ## To Do List-ish
+These might get done if we end up needing them/have time:
 * Limit requests per batch request
 * Handle Media in API calls (no need for it here, feel free)
 
