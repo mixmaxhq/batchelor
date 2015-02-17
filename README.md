@@ -10,6 +10,9 @@ In theory this library could be used with other APIs, but has only been tested w
 
 Feel free to get involved in development.
 
+## Issues, Features and Bugs
+This has been created for an internal project of [wapisasa](https://github.com/wapisasa) so it might not fit everyone's requirements. It might also be buggy as it's an alpha release. Any issues, feature requests or bugs that need attention please [let us know](https://github.com/wapisasa/batchelor/issues).
+
 ## Installation
 
 This library has also been distributed on `npm`. Install it with the following command:
