@@ -126,6 +126,7 @@ These might get done if we end up needing them/have time:
 
 ## Release History
 
+* 0.0.4 Authorization can now be set on each request (currently Bearer [...] only)
 * 0.0.3 More bug fixes: New contentId for every request
 * 0.0.2 Bug fixes
 * 0.0.1 Initial release
