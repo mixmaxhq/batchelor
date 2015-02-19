@@ -107,7 +107,8 @@ Batchelor.add({
 	'requestId':'Batch_UniqueID_1'
 })
 ```
-#### A Little Gift
+#### A Couple of Little Gifts
+###### Method Chaining
 All methods return the `Batchelor` object. So you can chain calls together.
 
 ``` node
@@ -119,6 +120,7 @@ Batchelor.init({
 	...
 });
 ```
+###### Data Pass-through
 When passing options to the `.add()` you can include an Object called `extend`. In the case of providing a callback, this will be passed back as a second parameter. When using the default callback on the `.run()` call, an array of all data passed through will be added as a second parameter with the requestId as the key:
 ``` node
 Batchelor.add({
