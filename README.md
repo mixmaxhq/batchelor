@@ -119,6 +119,8 @@ Batchelor.init({
 	...
 });
 ```
+When passing options to the `.add()` you can include an Object called `extend`. In the case of providing a callback, this will be passed back as a second parameter. When using the default callback on the `.run()` call, an array of all data passed through will be added as a second parameter with the requestId as the key.
+
 ## To Do List-ish
 These might get done if we end up needing them/have time:
 * Limit requests per batch request
@@ -126,7 +128,7 @@ These might get done if we end up needing them/have time:
 
 ## Release History
 
-* 0.0.5 Added the ability to passthrough specific information from the .add() options to the response object
+* 0.0.5 Added the ability to passthrough specific information from the `.add()` options to the response object
 * 0.0.4 Authorization can now be set on each request (currently Bearer [...] only)
 * 0.0.3 More bug fixes: New contentId for every request
 * 0.0.2 Bug fixes
