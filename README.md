@@ -119,7 +119,19 @@ Batchelor.init({
 	...
 });
 ```
-When passing options to the `.add()` you can include an Object called `extend`. In the case of providing a callback, this will be passed back as a second parameter. When using the default callback on the `.run()` call, an array of all data passed through will be added as a second parameter with the requestId as the key.
+When passing options to the `.add()` you can include an Object called `extend`. In the case of providing a callback, this will be passed back as a second parameter. When using the default callback on the `.run()` call, an array of all data passed through will be added as a second parameter with the requestId as the key:
+``` node
+Batchelor.add({
+	...
+	'extend':{
+		...
+	},
+	'callback':function(response, extendObj){
+		console.log(response, extendObj);
+	}
+});
+```
+This could be required, for example, when making multiple requests with different Auth data and then needing to make further requests with the same Auth data.
 
 ## To Do List-ish
 These might get done if we end up needing them/have time:
