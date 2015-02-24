@@ -135,13 +135,26 @@ Batchelor.add({
 ```
 This could be required, for example, when making multiple requests with different Auth data and then needing to make further requests with the same Auth data.
 
+###### Resetting and Re-using
+Once Batchelor has been run, there are certain use-cases for running futher batch requests on response. This requires the variables in the module to be reset. This can be done using the `.reset()` call:
+``` node
+Batchelor.run(function(response){
+
+	//	Reset Batchelor for further use
+	Batchelor.reset();
+	...
+
+});
+```
+
 ## To Do List-ish
 These might get done if we end up needing them/have time:
 * Limit requests per batch request
-* Handle Media in API calls (no need for it here, feel free)
+* Handle Media in API calls (no need for it here, feel free to write it)
 
 ## Release History
 
+* 0.0.7 Reset function for when you are using batchelor more than once in a script (ability for nested requests too)
 * 0.0.6 Bug fixes introduced in the last update and clean up was happening too soon. Moved it.
 * 0.0.5 Added the ability to passthrough specific information from the `.add()` options to the response object
 * 0.0.4 Authorization can now be set on each request (currently Bearer [...] only)
