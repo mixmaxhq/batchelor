@@ -154,6 +154,7 @@ These might get done if we end up needing them/have time:
 
 ## Release History
 
+* 0.0.8 Added support for DELETE requests (Thanks to [@bradvogel](https://github.com/bradvogel))
 * 0.0.7 Reset function for when you are using batchelor more than once in a script (ability for nested requests too)
 * 0.0.6 Bug fixes introduced in the last update and clean up was happening too soon. Moved it.
 * 0.0.5 Added the ability to passthrough specific information from the `.add()` options to the response object
