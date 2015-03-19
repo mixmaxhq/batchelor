@@ -24,7 +24,7 @@ Batchelor.add(...)
 Batchelor.run(...)
 ```
 
-you now need to create an instance:
+You now need to create an instance of Batchelor:
 
 ``` node
 var Batchelor = require('batchelor')
