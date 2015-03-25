@@ -13,6 +13,26 @@ Feel free to get involved in development.
 ## Issues, Features and Bugs
 This has been created for an internal project of [wapisasa](https://github.com/wapisasa) so it might not fit everyone's requirements. It might also be buggy as it's an alpha release. Any issues, feature requests or bugs that need attention please [let us know](https://github.com/wapisasa/batchelor/issues).
 
+## Upgrading to 1.0
+
+The API was changed in 1.0 to move from a singleton instance to a constructor. So before where you used `Batchelor` directly:
+
+``` node
+var Batchelor = require('batchelor')
+Batchelor.init(...)
+Batchelor.add(...)
+Batchelor.run(...)
+```
+
+You now need to create an instance of Batchelor:
+
+``` node
+var Batchelor = require('batchelor')
+var batch = new Batchelor(...)
+batch.add(...)
+batch.run(...)
+```
+
 ## Installation
 
 This library has also been distributed on `npm`. Install it with the following command:
@@ -21,6 +41,8 @@ This library has also been distributed on `npm`. Install it with the following c
 $ npm install batchelor --save
 ```
 
+See <https://github.com/wapisasa/batchelor/issues/4> for why this change was made.
+
 ## How to Use
 #### GET Requests
 ``` node
@@ -28,7 +50,7 @@ var Batchelor = require('batchelor');
 ```
 Once the module has been included, we initialise it with all our default options:
 ``` node
-Batchelor.init({
+var batch = new Batchelor({
 	'uri':'https://www.googleapis.com/batch',
 	'method':'POST',
 	'auth': {
@@ -43,14 +65,14 @@ We can then start adding requests to our batch. This can be done 2 ways:
 
 As a one-off object:
 ``` node
-Batchelor.add({
+batch.add({
 	'method':'GET',
 	'path':'/plusDomains/v1/people/me/activities/user'
 })
 ```
 Or an Array of objects:
 ``` node
-Batchelor.add([
+batch.add([
 	{
 		'method':'GET',
 		'path':'/plusDomains/v1/people/me/activities/user'
@@ -67,14 +89,14 @@ Batchelor.add([
 ```
 Once you have added all of the requests you need, call `.run()`:
 ``` node
-Batchelor.run(function(response){
+batch.run(function(response){
 	res.json(response);
 });
 ```
 #### POST Requests
 The above examples show `GET` requests. To perform a `POST` requires a few more settings:
 ``` node
-Batchelor.add({
+batch.add({
 	'method':'POST',
 	'path':'/plusDomains/v1/people/me/activities',
 	'parameters':{
@@ -84,9 +106,9 @@ Batchelor.add({
 });
 ```
 #### Callbacks
-By default, all responses are returned through the callback function in the `Batchelor.run()` call. Alternatively, a callback can be supplied for each individual calls:
+By default, all responses are returned through the callback function in the `batch.run()` call. Alternatively, a callback can be supplied for each individual calls:
 ``` node
-Batchelor.add({
+batch.add({
 	'method':'POST',
 	'path':'/plusDomains/v1/people/me/activities',
 	'parameters':{
@@ -99,9 +121,9 @@ Batchelor.add({
 });
 ```
 #### Request and Response IDs
-The module will assign a request a randomly generated unique `Content-ID` by default, but this can be supplied as part of the options to supply `Batchelor.add()`:
+The module will assign a request a randomly generated unique `Content-ID` by default, but this can be supplied as part of the options to supply `batch.add()`:
 ``` node
-Batchelor.add({
+batch.add({
 	'method':'GET',
 	'path':'/plusDomains/v1/people/me/activities/user',
 	'requestId':'Batch_UniqueID_1'
@@ -109,12 +131,10 @@ Batchelor.add({
 ```
 #### A Couple of Little Gifts
 ###### Method Chaining
-All methods return the `Batchelor` object. So you can chain calls together.
+All methods return the `Batchelor` instance. So you can chain calls together.
 
 ``` node
-Batchelor.init({
-	...
-}).add([
+batch.add([
 	...
 ]).run(function(data){
 	...
@@ -123,7 +143,7 @@ Batchelor.init({
 ###### Data Pass-through
 When passing options to the `.add()` you can include an Object called `extend`. In the case of providing a callback, this will be passed back as a second parameter. When using the default callback on the `.run()` call, an array of all data passed through will be added as a second parameter with the requestId as the key:
 ``` node
-Batchelor.add({
+batch.add({
 	...
 	'extend':{
 		...
@@ -136,12 +156,12 @@ Batchelor.add({
 This could be required, for example, when making multiple requests with different Auth data and then needing to make further requests with the same Auth data.
 
 ###### Resetting and Re-using
-Once Batchelor has been run, there are certain use-cases for running futher batch requests on response. This requires the variables in the module to be reset. This can be done using the `.reset()` call:
+Once Batchelor has been run, there are certain use-cases for running futher batch requests on response. This requires the variables in the instance to be reset. This can be done using the `.reset()` call:
 ``` node
-Batchelor.run(function(response){
+batch.run(function(response){
 
 	//	Reset Batchelor for further use
-	Batchelor.reset();
+	batch.reset();
 	...
 
 });
