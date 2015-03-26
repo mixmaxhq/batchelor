@@ -33,6 +33,8 @@ batch.add(...)
 batch.run(...)
 ```
 
+See <https://github.com/wapisasa/batchelor/issues/4> for why this change was made.
+
 ## Installation
 
 This library has also been distributed on `npm`. Install it with the following command:
@@ -40,8 +42,6 @@ This library has also been distributed on `npm`. Install it with the following c
 ``` sh
 $ npm install batchelor --save
 ```
-
-See <https://github.com/wapisasa/batchelor/issues/4> for why this change was made.
 
 ## How to Use
 #### GET Requests
