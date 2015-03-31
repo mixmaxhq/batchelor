@@ -57,7 +57,7 @@ var batch = new Batchelor({
 		'bearer': [... Google API Token ...]
 	},
 	'headers': {
-		'Content-Type': 'multipart/mixed;'
+		'Content-Type': 'multipart/mixed'
 	}
 });
 ```
