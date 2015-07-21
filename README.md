@@ -190,6 +190,7 @@ These might get done if we end up needing them/have time:
 
 ## Release History
 
+* 2.0.0 Bug Fixes and Improvements
 * 1.0.0 The API was changed in 1.0 to move from a singleton instance to a constructor (Thanks again to [@bradvogel](https://github.com/bradvogel))
 * 0.0.8 Added support for DELETE requests (Thanks to [@bradvogel](https://github.com/bradvogel))
 * 0.0.7 Reset function for when you are using batchelor more than once in a script (ability for nested requests too)
