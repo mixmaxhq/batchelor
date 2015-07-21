@@ -13,6 +13,22 @@ Feel free to get involved in development.
 ## Issues, Features and Bugs
 This has been created for an internal project of [wapisasa](https://github.com/wapisasa) so it might not fit everyone's requirements. It might also be buggy as it's an alpha release. Any issues, feature requests or bugs that need attention please [let us know](https://github.com/wapisasa/batchelor/issues).
 
+## Upgrading to 2.0
+
+`batch.run(...)` now takes a node style callback, with an error as the first parameter and the result as the second.
+
+**INCORRECT** (old, v1.0-style):
+
+``` node
+batch.run(function(result){});
+```
+
+**CORRECT** (new, v2.0-style):
+
+``` node
+batch.run(function(err, result){});
+```
+
 ## Upgrading to 1.0
 
 The API was changed in 1.0 to move from a singleton instance to a constructor. So before where you used `Batchelor` directly:
