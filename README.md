@@ -105,8 +105,13 @@ batch.add([
 ```
 Once you have added all of the requests you need, call `.run()`:
 ``` node
-batch.run(function(response){
-	res.json(response);
+batch.run(function(err, response){
+        if (err){
+		console.log("Error: " + err.toString());
+	}
+	else {
+		res.json(response);
+	}
 });
 ```
 #### POST Requests
