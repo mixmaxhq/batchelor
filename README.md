@@ -195,6 +195,7 @@ These might get done if we end up needing them/have time:
 
 ## Release History
 
+* 2.0.2 Added [error handler](https://github.com/wapisasa/batchelor/pull/15) and [made `headers` optional](https://github.com/wapisasa/batchelor/pull/17)
 * 2.0.1 Include response status code in error
 * 2.0.0 Bug Fixes and Improvements
 * 1.0.0 The API was changed in 1.0 to move from a singleton instance to a constructor (Thanks again to [@bradvogel](https://github.com/bradvogel))
