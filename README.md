@@ -156,7 +156,7 @@ All methods return the `Batchelor` instance. So you can chain calls together.
 ``` node
 batch.add([
 	...
-]).run(function(data){
+]).run(function(err, data){
 	...
 });
 ```
@@ -178,7 +178,7 @@ This could be required, for example, when making multiple requests with differen
 ###### Resetting and Re-using
 Once Batchelor has been run, there are certain use-cases for running futher batch requests on response. This requires the variables in the instance to be reset. This can be done using the `.reset()` call:
 ``` node
-batch.run(function(response){
+batch.run(function(err, response){
 
 	//	Reset Batchelor for further use
 	batch.reset();
