@@ -1,6 +1,6 @@
 {
   "name": "batchelor",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "A lovely little Node.js module to perform batch requests with the Google REST API",
   "main": "./lib/batchelor",
   "scripts": {
