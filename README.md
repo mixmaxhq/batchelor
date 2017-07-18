@@ -206,4 +206,4 @@ These might get done if we end up needing them/have time:
 * 0.0.1 Initial release
 
 ## Acknowledgement
-Built on the clock by [@sparkyfied](https://github.com/sparkyfied) as an internal project of [wapisasa C.I.C.](http://www.wapisasa.com)
+Built on the clock by [@jamesmhaley](https://github.com/jamesmhaley) as an internal project of [wapisasa C.I.C.](http://www.wapisasa.com)
