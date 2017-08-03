@@ -24,6 +24,13 @@
     "name": "James Haley",
     "email": "npmjs@jameshaley.co.uk"
   },
+  "contributors": [
+    {
+      "name": "Lewis Monteith",
+      "email": "lewismonteith@gmail.com",
+      "url": "https://github.com/lemonJS"
+    }
+  ],
   "licenses": {
     "type": "MIT",
     "url": "https://github.com/wapisasa/Batchelor/blob/master/LICENSE"
