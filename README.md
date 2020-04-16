@@ -8,9 +8,6 @@ In theory this library could be used with other APIs, but has only been tested w
 
 Feel free to get involved in development.
 
-## Issues, Features and Bugs
-This has been created for an internal project of [wapisasa](https://github.com/wapisasa) so it might not fit everyone's requirements. It might also be buggy as it's an alpha release. Any issues, feature requests or bugs that need attention please [let us know](https://github.com/wapisasa/batchelor/issues).
-
 ## Upgrading to 2.0
 
 `batch.run(...)` now takes a node style callback, with an error as the first parameter and the result as the second.
@@ -65,7 +62,8 @@ var Batchelor = require('batchelor');
 Once the module has been included, we initialise it with all our default options:
 ``` node
 var batch = new Batchelor({
-	'uri':'https://www.googleapis.com/batch',
+	// Any batch uri endpoint in the form: https://www.googleapis.com/batch/<api>/<version>
+	'uri':'https://www.googleapis.com/batch/gmail/v1/',
 	'method':'POST',
 	'auth': {
 		'bearer': [... Google API Token ...]
@@ -81,7 +79,7 @@ As a one-off object:
 ``` node
 batch.add({
 	'method':'GET',
-	'path':'/plusDomains/v1/people/me/activities/user'
+	'path':'/gmail/v1/users/me/messages/123'
 })
 ```
 Or an Array of objects:
@@ -89,15 +87,15 @@ Or an Array of objects:
 batch.add([
 	{
 		'method':'GET',
-		'path':'/plusDomains/v1/people/me/activities/user'
+		'path':'/gmail/v1/users/me/messages/123'
 	},
 	{
 		'method':'GET',
-		'path':'/plusDomains/v1/people/me/circles'
+		'path':'/gmail/v1/users/me/messages/456'
 	},
 	{
 		'method':'GET',
-		'path':'/plusDomains/v1/people/me/people/circled'
+		'path':/gmail/v1/users/me/messages/789'
 	}
 ]);
 ```
@@ -116,7 +114,7 @@ The above examples show `GET` requests. To perform a `POST` requires a few more 
 ``` node
 batch.add({
 	'method':'POST',
-	'path':'/plusDomains/v1/people/me/activities',
+	'path':'/gmail/v1/users/me/messages/',
 	'parameters':{
 		'Content-Type':'application/json;',
 		'body':{'object':{'originalContent': 'A wonderful batch post!'},'access': {'items': [{'type': 'domain'}],'domainRestricted': true}}
@@ -128,7 +126,7 @@ By default, all responses are returned through the callback function in the `bat
 ``` node
 batch.add({
 	'method':'POST',
-	'path':'/plusDomains/v1/people/me/activities',
+	'path':'/gmail/v1/users/me/messages/',
 	'parameters':{
 		'Content-Type':'application/json;',
 		'body':{'object':{'originalContent': 'Another wonderful batch post with callback!'},'access': {'items': [{'type': 'domain'}],'domainRestricted': true}}
@@ -143,7 +141,7 @@ The module will assign a request a randomly generated unique `Content-ID` by def
 ``` node
 batch.add({
 	'method':'GET',
-	'path':'/plusDomains/v1/people/me/activities/user',
+	'path':'/gmail/v1/users/me/messages/123',
 	'requestId':'Batch_UniqueID_1'
 })
 ```
