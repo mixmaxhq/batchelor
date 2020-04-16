@@ -62,6 +62,7 @@ var Batchelor = require('batchelor');
 Once the module has been included, we initialise it with all our default options:
 ``` node
 var batch = new Batchelor({
+	// Any batch uri endpoint in the form: https://www.googleapis.com/batch/<api>/<version>
 	'uri':'https://www.googleapis.com/batch/gmail/v1/',
 	'method':'POST',
 	'auth': {
