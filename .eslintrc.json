@@ -1,0 +1,3 @@
+{
+  "extends": ["mixmax/node/withJest", "mixmax/node/disable-require-atomic", "mixmax/flow/strict"]
+}

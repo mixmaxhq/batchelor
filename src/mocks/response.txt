@@ -1,0 +1,68 @@
+
+--batch_e18a79KIjgaVUvAf-cfwbL1MtYtcjIqC
+Content-Type: application/http
+Content-ID: response-Batchelor_0aa7c6a339ea2c81b6b31aef9ca08a84
+
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=UTF-8
+Vary: Origin
+Vary: X-Origin
+Vary: Referer
+
+{
+  "id": "172166a90d50fe37",
+  "threadId": "172146a7233427ed",
+  "labelIds": [
+    "IMPORTANT",
+    "CATEGORY_PERSONAL",
+    "INBOX"
+  ],
+  "payload": {
+    "partId": "",
+    "mimeType": "text/html",
+    "filename": "",
+    "headers": [
+    ],
+    "body": {
+      "size": 8892
+    }
+  },
+  "sizeEstimate": 13487,
+  "historyId": "126450404",
+  "internalDate": "1589513969000"
+}
+
+--batch_e18a79KIjgaVUvAf-cfwbL1MtYtcjIqC
+Content-Type: application/http
+Content-ID: response-Batchelor_4e511dacd7aa058b65447168483ff44e
+
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=UTF-8
+Vary: Origin
+Vary: X-Origin
+Vary: Referer
+
+{
+  "id": "172163f16b503c65",
+  "threadId": "17215f1d84fdbd16",
+  "labelIds": [
+    "IMPORTANT",
+    "CATEGORY_FORUMS",
+    "INBOX"
+  ],
+  "payload": {
+    "partId": "",
+    "mimeType": "multipart/alternative",
+    "filename": "",
+    "headers": [
+    ],
+    "body": {
+      "size": 0
+    }
+  },
+  "sizeEstimate": 6820,
+  "historyId": "126450427",
+  "internalDate": "1589511132000"
+}
+
+--batch_e18a79KIjgaVUvAf-cfwbL1MtYtcjIqC--

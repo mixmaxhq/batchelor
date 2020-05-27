@@ -2,13 +2,61 @@
   "name": "batchelor",
   "version": "2.0.2",
   "description": "A lovely little Node.js module to perform batch requests with the Google REST API",
-  "main": "./lib/batchelor",
+  "main": "./dist/index.js",
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "del dist && rollup \"-c$([ \"$WATCH\" = true ] && echo w)\"",
+    "watch": "WATCH=true npm run build",
+    "ci": "npm run lint && npm test",
+    "ci:commitlint": "commitlint-jenkins --pr-only",
+    "lint": "eslint . && flow",
+    "prepublishOnly": "npm run build && if [ \"$CI\" = '' ]; then node -p 'JSON.parse(process.env.npm_package_config_manualPublishMessage)'; exit 1; fi",
+    "semantic-release": "semantic-release",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/wapisasa/Batchelor.git"
+    "url": "git+ssh://git@github.com/mixmaxhq/batchelor.git"
+  },
+  "author": "Mixmax <hello@mixmax.com> (https://mixmax.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mixmaxhq/batchelor/issues"
+  },
+  "homepage": "https://github.com/mixmaxhq/batchelor#readme",
+  "devDependencies": {
+    "@babel/core": "^7.10.2",
+    "@babel/plugin-proposal-class-properties": "^7.10.1",
+    "@babel/plugin-transform-modules-commonjs": "^7.10.1",
+    "@babel/plugin-transform-runtime": "^7.10.1",
+    "@babel/preset-env": "^7.10.2",
+    "@babel/preset-flow": "^7.10.1",
+    "@commitlint/cli": "^8.3.5",
+    "@commitlint/config-conventional": "^8.3.4",
+    "@mixmaxhq/commitlint-jenkins": "^1.4.4",
+    "@mixmaxhq/git-hooks": "^1.1.0",
+    "@mixmaxhq/prettier-config": "^1.0.0",
+    "@mixmaxhq/semantic-release-config": "^2.0.0",
+    "cz-conventional-changelog": "^3.2.0",
+    "del-cli": "^3.0.1",
+    "eslint": "^6.8.0",
+    "eslint-config-mixmax": "^4.11.1",
+    "flow-bin": "^0.116.1",
+    "jest": "^24.9.0",
+    "nock": "^12.0.3",
+    "prettier": "^1.19.1",
+    "rollup": "^1.32.1",
+    "rollup-plugin-babel": "^4.4.0",
+    "semantic-release": "^17.0.8"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.10.2",
+    "dicer": "^0.2.5",
+    "hat": "0.0.3",
+    "http-string-parser": "0.0.4",
+    "request": "^2.88.2"
   },
   "keywords": [
     "batchelor",
@@ -20,22 +68,21 @@
     "rest",
     "api"
   ],
-  "author": {
-    "name": "James Haley",
-    "email": "npmjs@jameshaley.co.uk"
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    },
+    "manualPublishMessage": "This repository is configured to use semantic-release for its releases. Please do not release manually.\n"
   },
-  "licenses": {
-    "type": "MIT",
-    "url": "https://github.com/wapisasa/Batchelor/blob/master/LICENSE"
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
   },
-  "bugs": {
-    "url": "https://github.com/wapisasa/Batchelor/issues"
+  "release": {
+    "extends": "@mixmaxhq/semantic-release-config"
   },
-  "homepage": "https://github.com/wapisasa/Batchelor",
-  "dependencies": {
-    "dicer": "^0.2.3",
-    "hat": "0.0.3",
-    "http-string-parser": "0.0.4",
-    "request": "^2.53.0"
+  "publishConfig": {
+    "access": "public"
   }
 }
